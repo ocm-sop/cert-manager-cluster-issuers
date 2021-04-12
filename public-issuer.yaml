@@ -1,7 +1,7 @@
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
-  name: psi
+  name: public-issuer
   namespace: cert-manager
 spec:
   acme:
@@ -22,7 +22,7 @@ spec:
             region: us-east-1
             accessKeyID: MY_AWS_ACCESS_KEY_ID
             secretAccessKeySecretRef:
-              name: aws-creds
+              name: aws_creds
               key: aws_secret_access_key
         selector:
           matchLabels:
