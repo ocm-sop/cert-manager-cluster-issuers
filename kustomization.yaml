@@ -1,0 +1,21 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+commonLabels:
+    cicd.red-chesterfield.com/name: cert-manager-cluster-issuers
+    cicd.red-chesterfield.com/component: cert-manager-cluster-issuers
+    cicd.red-chesterfield.com/layer: network
+
+commonAnnotations:
+    cicd.red-chesterfield.com/managed-by: gitops
+    cicd.red-chesterfield.com/scm-url: git@github.com:ocm-sop/cert-manager-cluster-issuers.git
+
+namespace: "cert-manager"
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+resources:
+  - secret.yaml
+  - ssi.yaml
+  - psi.yaml
