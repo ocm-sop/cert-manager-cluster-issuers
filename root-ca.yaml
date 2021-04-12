@@ -6,8 +6,7 @@ spec:
   secretName: rootca
   subject:
     organizations:
-    - open-cluster-management.io
-    - red-chesterfield.com
+    - Open Cluster Management
   issuerRef:
     name: ssi
   commonName: "ca.self-signer.cert-manager"
