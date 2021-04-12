@@ -7,9 +7,9 @@ generatorOptions:
 secretGenerator:
 - name: aws-creds
   namespace: cert-manager
-  files:
-  - aws_secret_access_key=aws_access_key
-  - aws_secret_access_key=aws_secret_access_key
+  type: "Opaque"
+  literals:
+  - aws_secret_access_key=MY_AWS_SECRET_ACCESS_KEY
 
 resources:
   - public-issuer.yaml
