@@ -4,6 +4,10 @@ metadata:
   name: rootca
 spec:
   secretName: rootca
+  subject:
+    organizations:
+    - open-cluster-management.io
+    - red-chesterfield.com
   issuerRef:
     name: ssi
   commonName: "ca.self-signer.cert-manager"
