@@ -22,7 +22,7 @@ spec:
             region: us-east-1
             accessKeyID: MY_AWS_ACCESS_KEY_ID
             secretAccessKeySecretRef:
-              name: aws_creds
+              name: aws-creds
               key: aws_secret_access_key
         selector:
           matchLabels:

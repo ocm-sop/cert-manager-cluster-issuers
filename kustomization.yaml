@@ -5,7 +5,7 @@ generatorOptions:
   disableNameSuffixHash: true
 
 secretGenerator:
-- name: aws_creds
+- name: aws-creds
   namespace: cert-manager
   type: "Opaque"
   literals:
