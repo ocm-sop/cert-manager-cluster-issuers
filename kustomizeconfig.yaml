@@ -1,0 +1,34 @@
+commonLabels:
+- path: spec/acme/solvers/http01/selector/matchLabels
+  create: true
+  kind: ClusterIssuer
+  apiVersion: cert-manager/v1
+- path: spec/acme/solvers/dns01/selector/matchLabels
+  kind: ClusterIssuer
+  apiVersion: cert-manager/v1
+
+nameReference:
+- kind: ClusterIssuer
+  fieldSpecs:
+    - path: spec/issuerRef/name
+      kind: Certificate
+      apiVersion: cert-manager/v1
+- kind: Secret
+  fieldSpecs:
+    - path: spec/acme/privateKeySecretRef/name
+      kind: ClusterIssuer
+      apiVersion: cert-manager.io/v1
+    - path: spec/acme/solvers/dns01/route53/secretAccessKeyRef/name
+      kind: ClusterIssuer
+      apiVersion: cert-manager/v1
+- kind: IngressClass
+  fieldSpecs:
+    - path: spec/acme/solvers/http01/ingress/class
+      kind: ClusterIssuer
+      apiVersion: cert-manager/v1
+
+
+# varReference:
+# - path: spec/issuerRef/name
+#   kind: Certificate
+#   apiVersion: cert-manager/v1

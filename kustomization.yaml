@@ -4,6 +4,9 @@ kind: Component
 generatorOptions:
   disableNameSuffixHash: true
 
+configurations:
+  - kustomizeconfig.yaml
+
 secretGenerator:
 - name: aws-creds
   namespace: cert-manager
